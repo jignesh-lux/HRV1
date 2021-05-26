@@ -364,7 +364,7 @@ public class MasterCompanyPage extends TestBase {
 
     public void addCompany1Step1() {
         try {
-            Thread.sleep(2000);
+            TestUtil.waiting(2000);
             TestUtil.highlightElement(companyAddCompanyBtn);
             companyAddCompanyBtn.click();
             TestUtil.waiting(2000);
@@ -443,18 +443,18 @@ public class MasterCompanyPage extends TestBase {
         }
     }
 
-    public void addCompany1Step1Dummy() {
-        TestUtil.highlightElement(companyAddCompanyBtn);
-        companyAddCompanyBtn.click();
-        addCompanyStep1NameInput.sendKeys(data.getProperty("addCompanyStep1NameInput1"));
-        addCompanyStep1RegistrationNoInput.sendKeys(data.getProperty("addCompanyStep1RegistrationNoInput1"));
-        calender1();
-        MasterCompanyPage.addCompanyStep1ContinueBtn.click();
-    }
+//    public void addCompany1Step1Dummy() {
+//        TestUtil.highlightElement(companyAddCompanyBtn);
+//        companyAddCompanyBtn.click();
+//        addCompanyStep1NameInput.sendKeys(data.getProperty("addCompanyStep1NameInput1"));
+//        addCompanyStep1RegistrationNoInput.sendKeys(data.getProperty("addCompanyStep1RegistrationNoInput1"));
+//        calender1();
+//        MasterCompanyPage.addCompanyStep1ContinueBtn.click();
+//    }
 
     public void addCompany1Step2() {
         try {
-            TestUtil.waiting(3000);
+            TestUtil.waiting(2000);
             TestUtil.highlightElement(companyStep2Header);
             TestUtil.waiting(1000);
             Assert.assertTrue(companyStep2Header.isDisplayed(), "Company Step2 Header missing");
@@ -486,17 +486,17 @@ public class MasterCompanyPage extends TestBase {
         }
     }
 
-    public void addCompany1Step2Dummy() {
-//        Assert.assertTrue(companyStep2LogoHeader.isDisplayed(), "Company Step2 Contact  Header missing");
-//        companyStep2LogoInput.sendKeys(System.getProperty("user.dir") + "\\src\\main\\java\\com\\hrv1\\qa\\testdata\\Google.png");
-//        TestUtil.waiting(2000);
-//        TestUtil.highlightElement(companyStep2CurrencyClick);
-//        TestUtil.waiting(1000);
-//        companyStep2CurrencyClick.click();
-//        TestUtil.waiting(1000);
-//        companyStep2CurrencySelect.click();
-        addCompanyStep2ContinueBtn.click();
-    }
+//    public void addCompany1Step2Dummy() {
+////        Assert.assertTrue(companyStep2LogoHeader.isDisplayed(), "Company Step2 Contact  Header missing");
+////        companyStep2LogoInput.sendKeys(System.getProperty("user.dir") + "\\src\\main\\java\\com\\hrv1\\qa\\testdata\\Google.png");
+////        TestUtil.waiting(2000);
+////        TestUtil.highlightElement(companyStep2CurrencyClick);
+////        TestUtil.waiting(1000);
+////        companyStep2CurrencyClick.click();
+////        TestUtil.waiting(1000);
+////        companyStep2CurrencySelect.click();
+//        addCompanyStep2ContinueBtn.click();
+//    }
 
     public void addCompany1Step3() {
         try {
@@ -682,18 +682,18 @@ public class MasterCompanyPage extends TestBase {
         }
     }
 
-    public void addCompany1Step3Dummy() {
-        TestUtil.waiting(1000);
-        companyStep3ContactType0Click.click();
-        companyStep3ContactType0EmailSelect.click();
-        companyStep3ContactValue0EmailInput.sendKeys(data.getProperty("companyStep3ContactValue0InputEmail1"));
-        TestUtil.actionMethod(companyStep3EmailDefaultCheckbox0);
-        companyStep3EmailActiveCheckbox0.click();
-        TestUtil.actionMethod(companyStep3EmailActiveCheckbox0);
-
-        addCompanyStep3ContinueBtn.click();
-
-    }
+//    public void addCompany1Step3Dummy() {
+//        TestUtil.waiting(1000);
+//        companyStep3ContactType0Click.click();
+//        companyStep3ContactType0EmailSelect.click();
+//        companyStep3ContactValue0EmailInput.sendKeys(data.getProperty("companyStep3ContactValue0InputEmail1"));
+//        TestUtil.actionMethod(companyStep3EmailDefaultCheckbox0);
+//        companyStep3EmailActiveCheckbox0.click();
+//        TestUtil.actionMethod(companyStep3EmailActiveCheckbox0);
+//
+//        addCompanyStep3ContinueBtn.click();
+//
+//    }
 
     public void addCompany1Step4() {
         try {
@@ -709,30 +709,21 @@ public class MasterCompanyPage extends TestBase {
             TestUtil.actionMethod(companyStep4AcrossCompanyCheckboxSelect);
 
             TestUtil.waiting(1000);
-
             Assert.assertTrue(companyStep4PrefixHeader.isDisplayed(), "Company Step4  Prefix  Header missing");
             TestUtil.highlightElement(companyStep4PrefixInput);
+            Assert.assertEquals(companyStep4PrefixInput.getAttribute("value"), "E", "Prefix not match with the Across company filed");
 
-            TestUtil.waiting(2000);
-
-//            Assert.assertEquals(companyStep4PrefixInput.getText(), "E", "Prefix not match with the Across company filed");
-            Assert.assertEquals("E", "E", "Prefix not match with the Across company filed");
             TestUtil.waiting(1000);
-
             Assert.assertTrue(companyStep4TotalLengthHeader.isDisplayed(), "Company Step4  Prefix  Header missing");
             TestUtil.highlightElement(companyStep4TotalLengthInput);
-//            Assert.assertEquals(companyStep4TotalLengthInput.getText(), "6", "Total Length not match with the Across company filed");
-            Assert.assertEquals("6", "6", "Total Length not match with the Across company filed");
+            Assert.assertEquals(companyStep4TotalLengthInput.getAttribute("value"), "6", "Total Length not match with the Across company filed");
 
             TestUtil.waiting(1000);
-
             Assert.assertTrue(companyStep4EmployeeCodeHeader.isDisplayed(), "Company Step4  Prefix  Header missing");
             TestUtil.highlightElement(companyStep4EmployeeCodeInput);
-//            Assert.assertEquals(companyStep4EmployeeCodeInput.getText(), "E00000 - E99999", "Total Length not match with the Across company filed");
-            Assert.assertEquals("E00000 - E99999", "E00000 - E99999", "Total Length not match with the Across company filed");
+            Assert.assertEquals(companyStep4EmployeeCodeInput.getAttribute("value"), "E00000 - E99999", "Total Length not match with the Across company filed");
 
             TestUtil.waiting(1000);
-
             TestUtil.highlightElement(addCompanyStep4BackBtn);
             addCompanyStep4BackBtn.click();
             TestUtil.waiting(1000);

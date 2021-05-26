@@ -35,21 +35,26 @@ public class MasterCompanyEditPageTest extends TestBase {
     }
 
     @Test(priority = 1)
-    public void editCompanyTest(){
+    public void editMasterCompanyTest(){
         masterCompanyPage = new MasterCompanyPage();
         masterCompanyEditPage = new MasterCompanyEditPage();
-        masterCompanyEditPage.companyVerified();
-//        masterCompanyPage.addNewCompany1();
-//        masterCompanyPage.addNewCompany2();
-//        masterCompanyPage.addNewCompany3();
+        masterCompanyEditPage.verifyAddCompanyForEdit();
+        masterCompanyEditPage.editCompany1Step1();
+
+        masterCompanyEditPage.editCompany1Step2();
+//
+//        masterCompanyEditPage.editCompany1Step3();
+//
+//        masterCompanyEditPage.editCompany1Step4();
+
     }
 
 
     @AfterMethod
     public void dashboardHomePage(){
-        TestUtil.highlightElement(DashboardPage.dashboardLogo);
-        TestUtil.waiting(2000);
-        DashboardPage.dashboardLogo.click();
+//        TestUtil.highlightElement(DashboardPage.dashboardLogo);
+//        TestUtil.waiting(2000);
+//        DashboardPage.dashboardLogo.click();
     }
 
 

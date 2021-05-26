@@ -155,7 +155,7 @@ public class TestUtil extends TestBase {
         } catch (Exception e) {
             return false;
         }
-        return flag;
+        return false;
     }
 
     public static boolean isElementPresent(List<WebElement> locator, int index) {
@@ -168,7 +168,7 @@ public class TestUtil extends TestBase {
         } catch (Exception e) {
             return false;
         }
-        return flag;
+        return false;
     }
     public static void isDisplayed(){
 
