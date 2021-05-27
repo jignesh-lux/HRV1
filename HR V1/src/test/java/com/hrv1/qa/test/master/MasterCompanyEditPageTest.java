@@ -38,13 +38,17 @@ public class MasterCompanyEditPageTest extends TestBase {
     public void editMasterCompanyTest(){
         masterCompanyPage = new MasterCompanyPage();
         masterCompanyEditPage = new MasterCompanyEditPage();
-        masterCompanyEditPage.verifyAddCompanyForEdit();
-        masterCompanyEditPage.editCompany1Step1();
+//        masterCompanyEditPage.inactiveCompanyFromList();
+//        masterCompanyEditPage.activeInactiveCompanyFromList();
+        masterCompanyEditPage.deleteInactiveCompanyFromList();
 
-        masterCompanyEditPage.editCompany1Step2();
-//
+//        masterCompanyEditPage.verifyAddCompanyForEdit();
+//        masterCompanyEditPage.editCompany1Step1();
+
+//        masterCompanyEditPage.editCompany1Step2();
+
 //        masterCompanyEditPage.editCompany1Step3();
-//
+
 //        masterCompanyEditPage.editCompany1Step4();
 
     }
